@@ -1,0 +1,28 @@
+﻿@model MVC_School.Models.Entity.tblStudent
+
+@{
+    ViewBag.Title = "StudentAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Name Surname</label>
+        <input type="text" class="form-control" name="stdNameSurname" />
+    </div>
+    <div>
+        <label>Image URL</label>
+        <input type="text" class="form-control" name="stdImage" />
+    </div>
+    <div>
+        <label>Gender</label>
+        <input type="text" class="form-control" name="stdGender" />
+    </div>
+    <div>
+        <label>Social Club</label>
+        @Html.DropDownListFor(m=>m.tblSocialClub.socialClubId,(List<SelectListItem>)ViewBag.clb,new { @class = "form-control"})
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

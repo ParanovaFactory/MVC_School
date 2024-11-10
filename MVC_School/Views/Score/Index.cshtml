@@ -1,0 +1,48 @@
+﻿@using MVC_School.Models.Entity;
+@model List<tblScore>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Exam 1</th>
+        <th>Exam 2</th>
+        <th>Exam 3</th>
+        <th>Assignment</th>
+        <th>Average</th>
+        <th>Status</th>
+    </tr>
+    <tbody>
+        @foreach (var score in Model)
+        {
+            <tr>
+                <td>@score.scoreId</td>
+                <td>@score.tblStudent.stdNameSurname</td>
+                <td>@score.tblCours.courseName</td>
+                <td>@score.exam1</td>
+                <td>@score.exam2</td>
+                <td>@score.exam3</td>
+                <td>@score.assignment</td>
+                <td>@score.average</td>
+                @if (@score.status == true)
+                {
+                    <td>Passed</td>
+                }
+                @if (@score.status == false)
+                {
+                    <td>Failed</td>
+                }
+                <td>
+                    <a href="/Score/ScoreDelete/@score.scoreId" class="btn btn-danger">Delete</a>
+                    <a href="/Score/Bring/@score.scoreId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Score/ScoreAdd" class="btn btn-info">Add New Score</a>

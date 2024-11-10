@@ -1,0 +1,30 @@
+﻿@using MVC_School.Models.Entity;
+@model List<tblCours>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Course</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach(var crs in Model)
+            {
+                <tr>
+                    <td>@crs.courseId</td>
+                    <td>@crs.courseName</td>
+                    <td>
+                        <a href="/Course/CourseDelete/@crs.courseId" class="btn btn-danger">Delete</a>
+                        <a href="/Course/Bring/@crs.courseId" class="btn btn-warning">Update</a>
+                    </td>
+                </tr>
+            }
+    </tbody>
+</table>
+
+<a href="/Course/CourseAdd" class="btn btn-info">Add New Course</a>

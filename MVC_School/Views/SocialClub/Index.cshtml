@@ -1,0 +1,31 @@
+﻿@using MVC_School.Models.Entity;
+@model List<tblSocialClub>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Club</th>
+        <th>Quota</th>
+        <th>Operations</th>
+    </tr>
+    <tbody>
+        @foreach (var club in Model)
+        {
+            <tr>
+                <td>@club.socialClubId</td>
+                <td>@club.socialClubName</td>
+                <td>@club.socialClubQuota</td>
+                <td>
+                <a href="/SocialClub/ClubDelete/@club.socialClubId" class="btn btn-danger">Delete</a>
+                <a href="/SocialClub/Bring/@club.socialClubId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/SocialClub/ClubAdd" class="btn btn-info">Add New Club</a>

@@ -1,0 +1,44 @@
+﻿@model MVC_School.Models.Entity.tblScore
+
+@{
+    ViewBag.Title = "ScoreAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Course</label>
+        @Html.DropDownListFor(m => m.tblCours.courseId, (List<SelectListItem>)ViewBag.crs, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Student</label>
+        @Html.DropDownListFor(m => m.tblStudent.stdId, (List<SelectListItem>)ViewBag.std, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Exam 1</label>
+        <input type="text" class="form-control" name="exam1" id="exam1"/>
+    </div>
+    <div>
+        <label>Exam 2</label>
+        <input type="text" class="form-control" name="exam2" id="exam2"/>
+    </div>
+    <div>
+        <label>Exam 3</label>
+        <input type="text" class="form-control" name="exam3" id="exam3"/>
+    </div>
+    <div>
+        <label>Assignment</label>
+        <input type="text" class="form-control" name="assignment" id="assignment"/>
+    </div>
+    <div>
+        <label>Average</label>
+        <input type="text" class="form-control" name="average" />
+    </div>
+    <div>
+        <label>Status</label>
+        <input type="text" class="form-control" name="status" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-success">SAVE</button>
+    </div>
+</form>

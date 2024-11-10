@@ -1,0 +1,32 @@
+﻿@using MVC_School.Models.Entity;
+@model List<tblStudent>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Name Surname</th>
+        <th>Gender</th>
+        <th>Club</th>
+    </tr>
+    <tbody>
+        @foreach (var std in Model)
+        {
+            <tr>
+                <td>@std.stdId</td>
+                <td>@std.stdNameSurname</td>
+                <td>@std.stdGender</td>
+                <td>@std.tblSocialClub.socialClubName</td>
+                <td>
+                    <a href="/Student/StudentDelete/@std.stdId" class="btn btn-danger">Delete</a>
+                    <a href="/Student/Bring/@std.stdId" class="btn btn-warning">Update</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Student/StudentAdd" class="btn btn-info">Add New Student</a>

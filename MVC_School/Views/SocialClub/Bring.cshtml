@@ -1,0 +1,18 @@
+﻿@model MVC_School.Models.Entity.tblSocialClub
+
+@{
+    ViewBag.Title = "Bring";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("ClubEdit", "SocialClub", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Name</label>
+        @Html.TextBoxFor(m => m.socialClubName, new { @class = "form-control" })
+    </div>
+    @Html.HiddenFor(m => m.socialClubId)
+    <div style="margin-top:10px">
+        <button class="btn btn-success">UPDATE</button>
+    </div>
+}
