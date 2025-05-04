@@ -26,7 +26,7 @@ The frontend is built using a **ready-to-use template**, providing a professiona
 
 ## 🧰 Technologies Used
 
-- **Framework**: ASP.NET Core MVC
+- **Framework**: ASP.NET MVC
 - **Language**: C#
 - **Database**: SQL Server (used for storing user data)
 - **Frontend**: HTML, CSS, JavaScript (Bootstrap for responsive design, with a pre-built UI template)
